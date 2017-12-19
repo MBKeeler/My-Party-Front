@@ -11,12 +11,44 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
+    <body class="container-fluid" id="site-body">
 
       <div class="row" id="navbar">
         <div class="col-sm-4" id="navigation">Navigation</div>
         <div class="col-sm-4" id="messages">Messages</div>
-        <div class="col-sm-4" id="login">Sign In / Sign Up</div>
+        <div class="col-sm-4" id="login_panel">
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#login_forms" aria-expanded="false" aria-controls="login_forms">
+          Sign In / Sign Up
+          </button>
+          <br><br><br>
+          <div class="collapse" id="login_forms">
+            <div class="card card-body">
+              <form id="sign-in">
+                <fieldset>
+                  <legend>Login</legend>
+                    <input type="text" name="credentials[email]"  placeholder="Enter Username">
+                    <br>
+                    <input id="pw-field" type="password" name="credentials[password]"  placeholder="Password">
+                    <br>
+                    <button type="submit" name="submit" value="Login">Login</button>
+                </fieldset>
+              </form>
+              <br>
+              <form id="sign-up">
+                <fieldset>
+                  <legend>Register</legend>
+                    <input type="text" name="credentials[email]" placeholder="User Name">
+                    <br>
+                    <input type="password" name="credentials[password]" placeholder="Enter a Password">
+                    <br>
+                    <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                    <br>
+                    <button type="submit" name="submit" value="Register New User">Register New User</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Begin app_body -->
