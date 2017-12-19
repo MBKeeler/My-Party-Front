@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>My Party!</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,14 +12,24 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <div class="row" id="navbar">
+        <div class="col-sm-4" id="navigation">Navigation</div>
+        <div class="col-sm-4" id="messages">Messages</div>
+        <div class="col-sm-4" id="login">Sign In / Sign Up</div>
+      </div>
+
+      <!-- Begin app_body -->
+      <div class="row" id="app_body">
+        <div class="col-sm-4" id="side_bar">.col-sm-4</div>
+        <div class="col-sm-8" id="main-view">.col-sm-8</div>
+      </div>
+      <!-- End of app_body -->
+
+      <div class="row" id="footer">
+        <div class="col-sm-6">Footer 1st half</div>
+        <div class="col-sm-6">Footer 2nd half</div>
+      </div>
+
     </body>
 </html>

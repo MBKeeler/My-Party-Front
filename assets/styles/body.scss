@@ -1,0 +1,49 @@
+// Styling for body of application including common elements except navigation
+
+// body background image
+
+// #site-body {
+//   background-image: url("https://i.imgur.com/aiDjOjp.jpg");
+//   background-repeat: no-repeat;
+//   background-position: center top;
+//   background-color: #496d91;
+//   color: #fff;
+// }
+
+// tag level styling
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+div {
+  border-width: 1px;
+  border-color: blue;
+  border-style: solid;
+}
+
+button {
+    float: left;
+    background-color: #727272;
+    border: none;
+    color: #fff;
+    padding: 3px 6px;
+    margin: 5px 5px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+// class level styling
+
+
+
+// id level styling
+#app_body {
+  // float: left;
+  // width: 100%;
+  // min-height: 100%;
+  background-color: #565656;
+}
