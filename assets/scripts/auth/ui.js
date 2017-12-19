@@ -5,8 +5,6 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   // console.log(data)
   $('#messages').html('You have signed up successfully. Now login.')
-  // $('.collapse').collapse('hide')
-  $('#login_forms').collapse('hide')
 }
 
 const signUpFailure = function (error) {
