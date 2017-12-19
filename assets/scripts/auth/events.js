@@ -3,26 +3,30 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 //const store = require('../store')
 const api = require('./api')
 const ui = require('./ui')
-const app_api = require('../app/app_api')
-const app_ui = require('../app/app_ui')
+// const app_api = require('../app/app_api')
+// const app_ui = require('../app/app_ui')
 
 // Authentication handlers
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  //  console.log('sign-up', data)
-  api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+  console.log('sign-up', data)
+  // check to make sure pws match
+  if (data.credentials.password !== data.credentials.password_confirmation) {
+    ui.pwDontMatch()
+  } else {
+    api.signUp(data)
+      .then(ui.signUpSuccess)
+      .catch(ui.signUpFailure)
+  }
 }
 
 // for sign in
 const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  //  console.log('sign-in', data)
-  //  console.log(data)
+  console.log('sign-in', data)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -45,8 +49,9 @@ const onChangePassword = function (event) {
   event.preventDefault()
   // console.log('change password ran!')
   const data = getFormFields(this)
-  console.log(data)
-  console.log(data.passwords.old, data.passwords.new)
+  // console.log(data)
+  // console.log(data.passwords.old, data.passwords.new)
+  // check to make sure pws are different
   if (data.passwords.old === data.passwords.new) {
     ui.notUniquePw()
   } else {
