@@ -5,6 +5,8 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   // console.log(data)
   $('#messages').html('You have signed up successfully. Now login.')
+  // $('.collapse').collapse('hide')
+  $('#login_forms').collapse('hide')
 }
 
 const signUpFailure = function (error) {
@@ -39,7 +41,8 @@ const signOutSuccess = function () {
   $('#sign-out').hide()
   // show the sign in/sign out button and forms
   $('#show_auth_forms').show()
-  $('#login_forms').show()
+  // collpses the login forms before they are shown again
+  $('#login_forms').collapse('hide').show()
   $(':input', '#sign-in').val('')
   $('#messages').html('You have signed out successfully')
   // need to clear memory of the user information which includes token and auth header
