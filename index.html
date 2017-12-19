@@ -15,11 +15,17 @@
 
       <div class="row" id="navbar">
         <div class="col-sm-4" id="navigation">Navigation</div>
+        <!-- ends the navigation panel -->
         <div class="col-sm-4" id="messages"></div>
+        <!-- ends the messages panel -->
         <div class="col-sm-4" id="login_panel">
-          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#login_forms" aria-expanded="false" aria-controls="login_forms">
+          <button class="btn btn-primary" id="show_auth_forms" type="button" data-toggle="collapse" data-target="#login_forms" aria-expanded="false" aria-controls="login_forms">
           Sign In / Sign Up
           </button>
+          <button class="btn btn-primary" id="change_pw_bttn" type="button" data-toggle="collapse" data-target="#change_pw" aria-expanded="false" aria-controls="change_pw">
+          Change Password
+          </button>
+          <button id="sign-out" type="click" name="submit">Log Out</button>
           <br><br><br>
           <div class="collapse" id="login_forms">
             <div class="card card-body">
@@ -48,11 +54,31 @@
               </form>
             </div>
           </div>
+          <!-- ends the login forms viewable on first landing -->
+          <div class="card card-body" id="change_pw_container">
+            <div class="collapse" id="change_pw">
+              <form id="change-password">
+                <fieldset>
+                  <legend>Change Password</legend>
+                    <input type="password" name="passwords[old]" placeholder="Curent Password">
+                    <br>
+                    <input type="password" name="passwords[new]" placeholder="New Password">
+                    <br>
+                    <button type="submit" >Change Password</button>
+                </fieldset>
+                  <button id="cancel" type="submit" name="cancel">Cancel</button>
+                  <p id="change-pw-message"></p>
+              </form>
+              </div>
+          </div>
+          <!-- ends the change pw form hidden until user authenticates -->
         </div>
+        <!-- ends authentication actions panel -->
       </div>
+      <!-- ends the navbar -->
 
       <!-- Begin app_body -->
-      <div class="row" id="app_body">
+      <div class="row" id="app_body" onload="">
         <div class="col-sm-4" id="side_bar">.col-sm-4</div>
         <div class="col-sm-8" id="main-view">.col-sm-8</div>
       </div>

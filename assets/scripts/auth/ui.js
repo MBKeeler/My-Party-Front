@@ -17,6 +17,14 @@ const signInSuccess = function (data) {
   $('#messages').html('You have signed in successfully').fadeOut(8000)
   // we have to store the user data or header somwhere.  so we will put it in ../store.js
   store.user = data.user
+  console.log('user data is:', data.user)
+  // hides the sign in/sign up button and forms
+  $('#show_auth_forms').hide()
+  $('#login_forms').hide()
+  // reveals the pw change and logout buttons
+  $('#change_pw_bttn').show()
+  $('#change_pw_container').show()
+  $('#sign-out').show()
 }
 
 const signInFailure = function (error) {
@@ -25,10 +33,15 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function () {
-  // $('.welcome-box').show()
+  // hide the change pw form, change pw button and logout button
+  $('#change_pw_bttn').hide()
+  $('#change_pw_container').hide()
+  $('#sign-out').hide()
+  // show the sign in/sign out button and forms
+  $('#show_auth_forms').show()
+  $('#login_forms').show()
   $(':input', '#sign-in').val('')
-  // $(':input', '#enter-player').val('')
-  $('#messages').html('You have signed out successfully').fadeOut(8000)
+  $('#messages').html('You have signed out successfully')
   // need to clear memory of the user information which includes token and auth header
   store.user = null
 }
