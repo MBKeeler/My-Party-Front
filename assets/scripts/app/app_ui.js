@@ -12,18 +12,27 @@ const addBeverageFailure = function (error) {
 
 // begin navigation methods
 const goToAddBeverage = function () {
+  $('#all_beverages_panel').hide()
   $('#my_beverages_panel').hide()
   $('#add_beverage_panel').show()
 }
 
 const goToAllBeverages = function () {
-  $('').hide()
+  $('#my_beverages_panel').hide()
+  $('#add_beverage_panel').hide()
   $('#all_beverages_panel').show()
+}
+
+const goToMyBeverages = function () {
+  $('#add_beverage_panel').hide()
+  $('#all_beverages_panel').hide()
+  $('#my_beverages_panel').show()
 }
 
 module.exports = {
   addBeverageSuccess,
   addBeverageFailure,
   goToAddBeverage,
-  goToAllBeverages
+  goToAllBeverages,
+  goToMyBeverages
 }

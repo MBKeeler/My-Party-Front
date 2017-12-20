@@ -109,19 +109,18 @@
             Landing Page
           </div>
           <div id="all_beverages_panel">
-            <div class="navbar">
-              <!-- <button type="click" id="go_add_beverage">Add a Beverage</button> -->
+            <div class="navbar"><button type="click" id="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" id="go_my_beverages" name="go_add_beverage">View My Beverages</button>
             </div>
             All Beverages
           </div>
           <!-- ends all_beverages_panel -->
           <div id="my_beverages_panel">
-            <div class="navbar"><button type="click" id="go_add_beverage" name="go_add_beverage">Add a Beverage</button></div>
+            <div class="navbar"><button type="click" id="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" id="go_all_beverages" name="go_add_beverage">View All Beverages</button></div>
             My Beverages Panel
           </div>
           <!-- ends my_beverages_panel -->
           <div id="add_beverage_panel">
-            <div class="navbar"><button>All Beverages</button></div>
+            <div class="navbar"><button type="click" id="go_all_beverages" name="go_add_beverage">View All Beverages</button><button type="click" id="go_my_beverages" name="go_add_beverage">View My Beverages</button></div>
             Add Beverage Panel
             <div id="add_t ">
               <form id="add_beverage_form">
@@ -130,15 +129,17 @@
                     <input type="text" name="beverage[name]" placeholder="Beverage Name">
                     <br>
                     <select id="occasion_selector" name="beverage[occasion]" required>
-                      <option value="" disabled="disabled" selected="selected">Select an Occasion or Type Your Own</option>
+                      <option value="" disabled="disabled" selected="selected">Select an Occasion</option>
                       <option value="Anytime">Anytime</option>
                       <option value="Birthday">Birthday</option>
+                      <option value="Chanukah">Chanukah</option>
                       <option value="Christmas">Christmas</option>
-                      <option value="Classic">Classic</option>
+                      <option value="Classic">Classic Cocktail</option>
                       <option value="Date Night">Date Night</option>
                       <option value="New Year's Eve">New Year's Eve</option>
                       <option value="Nonalcoholic Event">Nonalcoholic Event</option>
                       <option value="Summer Fun">Summer Fun</option>
+                      <option value="Sporting Event">Sport Event</option>
                   </select>
                     <br>
                     <input type="text" name="beverage[description]" placeholder="Description">
@@ -155,7 +156,7 @@
             <div id="modify_beverage">
               <form id="modify_beverage_form">
                 <fieldset>
-                  <legend>Add a New Beverage</legend>
+                  <legend>Modify a New Beverage</legend>
                     <input type="text" name="beverage[name]" placeholder="Beverage Name">
                     <br>
                     <input type="text" name="beverage[occasion]" placeholder="Occasion">
