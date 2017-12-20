@@ -14,8 +14,16 @@ const onAddBeverage = function (event) {
     .catch(app_ui.addBeverageFailure)
 }
 
+// navigation methods
+
+const onGoAddBeverage = function (event) {
+  event.preventDefault()
+  app_ui.goToAddBeverage()
+}
+
 const addHandlers = function () {
-  $('#add_bevarage_form').on('submit', onAddBeverage)
+  $('#add_beverage_form').on('submit', onAddBeverage)
+  $('#go_add_beverage').on('click', onGoAddBeverage)
 }
 
 module.exports = {
