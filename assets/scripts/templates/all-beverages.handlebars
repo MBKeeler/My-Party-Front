@@ -1,0 +1,14 @@
+{{#each beverages as |beverage|}}
+
+    {{#if player}}
+        <tr data-id="{{beverage.id}}">
+          <td align="left">{{beverage.rating}}</td>
+          <td align="left">{{beverage.name}}</td>
+          <td align="left">{{beverage.description}}</td>
+          <td align="left">{{beverage.occasion}}</td>
+        </tr>
+{{else}}
+    There are no beverages on record.
+{{/if}}
+
+{{/each}}
