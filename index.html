@@ -14,7 +14,7 @@
     <body class="container-fluid" id="site-body">
 
       <div class="row" id="authbar">
-        <div class="col-sm-4" id="navigation">Navigation</div>
+        <div class="col-sm-4" id="navigation">Branding</div>
         <!-- ends the navigation panel -->
         <div class="col-sm-4" id="message_container">
           <span id="messages"></span>
@@ -80,7 +80,6 @@
       <!-- ends the authbar -->
 
       <!-- Begin app_body -->
-      <div id="navbar"></div>
       <div class="row" id="app_body" >
         <div class="col-sm-4" id="side_bar">
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -106,12 +105,24 @@
         </div>
         <!-- ends the sidebar -->
         <div class="col-sm-8" id="main-view">
-          <div id="landing_page_panel" onload="">Landing Page</div>
-          <div id="all_beverages_panel">All Beverages</div>
-          <div id="my_beverages_panel">My Beverages Panel</div>
-          <div id="add_beverage_panel">Add Beverage Panel
-            <div id="add_bevarage">
-              <form id="add_bevarage_form">
+          <div id="landing_page_panel" onload="">
+            Landing Page
+          </div>
+          <div id="all_beverages_panel">
+            <div class="navbar"><button type="click" id="go_add_berage">Add a Beverage</button></div>
+            All Beverages
+          </div>
+          <!-- ends all_beverages_panel -->
+          <div id="my_beverages_panel">
+            <div class="navbar"></div>
+            My Beverages Panel
+          </div>
+          <!-- ends my_beverages_panel -->
+          <div id="add_beverage_panel">
+            <div class="navbar"><button>All Beverages</button></div>
+            Add Beverage Panel
+            <div id="add_t ">
+              <form id="add_beverage_form">
                 <fieldset>
                   <legend>Add a New Beverage</legend>
                     <input type="text" name="beverage[name]" placeholder="Beverage Name">
@@ -128,8 +139,9 @@
                 </fieldset>
               </form>
             </div>
-            <div id="modify_bevarage">
-              <form id="modify_bevarage_form">
+            <!-- ends add_beverage div -->
+            <div id="modify_beverage">
+              <form id="modify_beverage_form">
                 <fieldset>
                   <legend>Add a New Beverage</legend>
                     <input type="text" name="beverage[name]" placeholder="Beverage Name">
@@ -146,7 +158,9 @@
                 </fieldset>
               </form>
             </div>
+            <!-- ends modify_beverage div-->
           </div>
+          <!-- ends add_beverage_panel -->
         </div>
         <!-- ends the main view panel -->
       </div>
