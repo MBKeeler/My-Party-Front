@@ -21,6 +21,7 @@ const signInSuccess = function (data) {
   // hides the sign in/sign up button and forms
   $('#show_auth_forms').hide()
   $('#login_forms').hide()
+  $('#landing_page_panel').hide()
   $('#all_beverages_panel').hide()
   // reveals the pw change and logout buttons
   $('#change_pw_bttn').show()
@@ -43,6 +44,7 @@ const signOutSuccess = function () {
   // empty and hide the user's panels
   $('#my_beverages_panel').empty().hide()
   $('#add_beverage_panel').empty().hide()
+  $('#all_beverages_panel').empty().hide()
   // show the sign in/sign out button and forms
   $('#show_auth_forms').show()
   // collpses the login forms before they are shown again
@@ -50,7 +52,7 @@ const signOutSuccess = function () {
   $(':input', '#sign-in').val('')
   $('#messages').html('You have signed out successfully')
   // show the all beverages Panel
-  $('#all_beverages_panel').show()
+  $('#landing_page_panel').show()
   // need to clear memory of the user information which includes token and auth header
   store.user = null
 }
