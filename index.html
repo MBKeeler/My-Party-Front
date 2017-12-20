@@ -109,12 +109,14 @@
             Landing Page
           </div>
           <div id="all_beverages_panel">
-            <div class="navbar"><button type="click" id="go_add_berage">Add a Beverage</button></div>
+            <div class="navbar">
+              <!-- <button type="click" id="go_add_beverage">Add a Beverage</button> -->
+            </div>
             All Beverages
           </div>
           <!-- ends all_beverages_panel -->
           <div id="my_beverages_panel">
-            <div class="navbar"></div>
+            <div class="navbar"><button type="click" id="go_add_beverage" name="go_add_beverage">Add a Beverage</button></div>
             My Beverages Panel
           </div>
           <!-- ends my_beverages_panel -->
@@ -127,13 +129,23 @@
                   <legend>Add a New Beverage</legend>
                     <input type="text" name="beverage[name]" placeholder="Beverage Name">
                     <br>
-                    <input type="text" name="beverage[occasion]" placeholder="Occasion">
+                    <select id="occasion_selector" name="beverage[occasion]" required>
+                      <option value="" disabled="disabled" selected="selected">Select an Occasion or Type Your Own</option>
+                      <option value="Anytime">Anytime</option>
+                      <option value="Birthday">Birthday</option>
+                      <option value="Christmas">Christmas</option>
+                      <option value="Classic">Classic</option>
+                      <option value="Date Night">Date Night</option>
+                      <option value="New Year's Eve">New Year's Eve</option>
+                      <option value="Nonalcoholic Event">Nonalcoholic Event</option>
+                      <option value="Summer Fun">Summer Fun</option>
+                  </select>
                     <br>
                     <input type="text" name="beverage[description]" placeholder="Description">
                     <br>
                     <input type="text" name="beverage[recipe]" placeholder="Recipe">
                     <br>
-                    <input type="text" name="beverage[rating]" placeholder="Rating">
+                    <input type="number" name="beverage[rating]" placeholder="Rating">
                     <br>
                     <button type="submit" name="submit" value="Add New Beverage">Add New Beverage</button>
                 </fieldset>

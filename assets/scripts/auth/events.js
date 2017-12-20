@@ -3,8 +3,8 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 //const store = require('../store')
 const api = require('./api')
 const ui = require('./ui')
-// const app_api = require('../app/app_api')
-// const app_ui = require('../app/app_ui')
+const app_api = require('../app/app_api')
+const app_ui = require('../app/app_ui')
 
 // Authentication handlers
 
@@ -61,11 +61,39 @@ const onChangePassword = function (event) {
   }
 }
 
+// begin app events
+const onAddBeverage = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  console.log('onAddBeverage called with data:', data)
+  app_api.addBeverage(data)
+    .then(app_ui.addBeverageSuccess)
+    .catch(app_ui.addBeverageFailure)
+}
+
+// navigation methods
+
+const onGoAddBeverage = function (event) {
+  event.preventDefault()
+  console.log('onGoAddBeverage called')
+  app_ui.goToAddBeverage()
+}
+
+const onGoAllBeverages = function (event) {
+  event.preventDefault()
+  app_ui.goToAllBeverages()
+}
+
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  // begin app event handlers
+  $('#add_beverage_form').on('submit', onAddBeverage)
+  // begin app navigation handlers
+  $('#go_add_beverage').on('click', onGoAddBeverage)
+  $('#go_all_beverages').on('click', onGoAllBeverages)
 }
 
 module.exports = {

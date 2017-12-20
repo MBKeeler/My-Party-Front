@@ -41,6 +41,8 @@ const signOutSuccess = function () {
   $('#change_pw_bttn').hide()
   $('#change_pw_container').hide()
   $('#sign-out').hide()
+  // mesage to user
+  $('#messages').html('You have signed out successfully')
   // empty and hide the user's panels
   $('#my_beverages_panel').empty().hide()
   $('#add_beverage_panel').empty().hide()
@@ -50,7 +52,6 @@ const signOutSuccess = function () {
   // collpses the login forms before they are shown again
   $('#login_forms').collapse('hide').show()
   $(':input', '#sign-in').val('')
-  $('#messages').html('You have signed out successfully')
   // show the all beverages Panel
   $('#landing_page_panel').show()
   // need to clear memory of the user information which includes token and auth header
