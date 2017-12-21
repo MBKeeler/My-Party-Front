@@ -4,6 +4,8 @@
 // const myTemplate = require('../templates/temlate.handlebars')
 const viewAllBeveragesTemplate = require('../templates/all-beverages.handlebars')
 const randomBeveragesTemplate = require('../templates/random-coctaildb-beverage.handlebars')
+const myBeveragesTemplate = require('../templates/edit-delete-beverages.handlebars')
+
 // external beverage db methods
 
 const getRamdomBeverageSuccess = function (data) {
@@ -28,7 +30,9 @@ const getExternalBeverageFailure = function (error) {
   $('#messages').show().html('There was a problem getting a your beverage from thecoctaildb.com.  Try again later.').fadeOut(8000)
 }
 
-// beverage app action methods
+// Start of beverage app action methods
+
+  // add beverage
 const addBeverageSuccess = function () {
   $('#messages').show().html('Beverage was added successfully').fadeOut(8000)
   $(':input', '#enter-player').val('')
@@ -38,6 +42,7 @@ const addBeverageFailure = function (error) {
   $('#messages').show().html('There was a problem adding your beverage. Please check that all fields were filled out correctly.').fadeOut(8000)
 }
 
+  // list all beverages
 const viewAllBeveragesSuccess = function (data) {
   console.log('viewAllBeveragesSuccess data is :', data)
   const showAllBevsHtml = viewAllBeveragesTemplate({ beverages: data.beverages })
@@ -47,6 +52,18 @@ const viewAllBeveragesSuccess = function (data) {
 const viewAllBeveragesFailure = function (error) {
   console.error('listAllBeverages failed: ', error)
   $('#messages').show().html('There was a problem getting a list of all beverages.').fadeOut(8000)
+}
+
+  // list my_beverages
+const viewMyBeveragesSuccess = function (data) {
+  console.log('viewMyBeveragesSuccess data is :', data)
+  const showMyBevsHtml = myBeveragesTemplate({ beverages: data.beverages })
+  $('#my_beverages_target').append(showMyBevsHtml)
+}
+
+const viewMyBeveragesFailure = function (error) {
+  console.error('listAllBeverages failed: ', error)
+  $('#messages').show().html('There was a problem getting a list of your beverages.').fadeOut(8000)
 }
 
 // begin navigation methods
@@ -68,6 +85,10 @@ const goToMyBeverages = function () {
   $('#my_beverages_panel').show()
 }
 
+const hideChngePwForm = function () {
+  $('#change_pw').collapse('hide')
+}
+
 module.exports = {
   getRamdomBeverageSuccess,
   getRamdomBeverageFailure,
@@ -77,7 +98,10 @@ module.exports = {
   addBeverageFailure,
   viewAllBeveragesSuccess,
   viewAllBeveragesFailure,
+  viewMyBeveragesSuccess,
+  viewMyBeveragesFailure,
   goToAddBeverage,
   goToAllBeverages,
-  goToMyBeverages
+  goToMyBeverages,
+  hideChngePwForm
 }
