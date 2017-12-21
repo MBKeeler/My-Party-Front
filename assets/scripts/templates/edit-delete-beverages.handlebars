@@ -6,8 +6,8 @@
           <td align="left">{{beverage.name}}</td>
           <td align="left">{{beverage.description}}</td>
           <td align="left">{{beverage.occasion}}</td>
+          <td><button id="modBvgBttn" value="{{beverage.id}}" name='view' type='click'>View</button></td>
           <td><button id="delBvgBttn" value="{{beverage.id}}" name='delete' type='click'>Delete</button></td>
-          <td><button id="modBvgBttn" value="{{beverage.id}}" name='modify' type='click'>Modify</button></td>
         </tr>
 {{else}}
     There are no beverages on record.

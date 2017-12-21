@@ -104,6 +104,17 @@ const onViewMyBeverages = function () {
     .then(app_ui.viewMyBeveragesSuccess)
     .catch(app_ui.viewMyBeveragesFailure)
 }
+
+const onDeleteBeverage = function (event) {
+  console.log('onDeleteBeverage called')
+  event.preventDefault()
+  const data = $(event.target).attr('value')
+  // console.log('data', data)
+  app_api.deleteBeverage(data)
+    .then(app_ui.deleteBeverageSuccess)
+    .catch(app_ui.deleteBeverageFailure)
+}
+
 // navigation bar button methods
 
 const onGoAddBeverage = function (event) {
@@ -137,6 +148,7 @@ const addHandlers = function () {
   $('#search_externalDB_form').on('submit', searchTheCoctailDbByName)
   // begin app event handlers
   $('#add_beverage_form').on('submit', onAddBeverage)
+  $('#my_beverages_target').on('click', '#delBvgBttn', onDeleteBeverage)
   // begin app navigation handlers
   $('#go_add_beverage').on('click', onGoAddBeverage)
   $('#go_all_beverages').on('click', onGoAllBeverages).on('click', onViewAllBeverages)

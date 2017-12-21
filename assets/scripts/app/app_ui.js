@@ -57,14 +57,25 @@ const viewAllBeveragesFailure = function (error) {
 
   // list my_beverages
 const viewMyBeveragesSuccess = function (data) {
-  console.log('viewMyBeveragesSuccess data is :', data)
   const showMyBevsHtml = myBeveragesTemplate({ beverages: data.beverages })
+  $('#my_beverages_target').empty()
   $('#my_beverages_target').append(showMyBevsHtml)
 }
 
 const viewMyBeveragesFailure = function (error) {
   console.error('listAllBeverages failed: ', error)
   $('#messages').show().html('There was a problem getting a list of your beverages.').fadeOut(8000)
+}
+
+  // delete my beverage
+
+const deleteBeverageSuccess = function () {
+  $('#messages').show().html('Beverage deleted successfully').fadeOut(8000)
+}
+
+const deleteBeverageFailure = function (error) {
+  console.error('deleteBeverage failed: ', error)
+  $('#messages').show().html('There was a problem deleting the beverage.').fadeOut(8000)
 }
 
 // begin navigation methods
@@ -102,6 +113,8 @@ module.exports = {
   viewAllBeveragesFailure,
   viewMyBeveragesSuccess,
   viewMyBeveragesFailure,
+  deleteBeverageSuccess,
+  deleteBeverageFailure,
   goToAddBeverage,
   goToAllBeverages,
   goToMyBeverages,
