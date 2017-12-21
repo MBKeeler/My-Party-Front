@@ -2,13 +2,15 @@
 // const store = require('../store')
 
 // const myTemplate = require('../templates/temlate.handlebars')
-
 const viewAllBeveragesTemplate = require('../templates/all-beverages.handlebars')
-
+const randomBeveragesTemplate = require('../templates/random-coctaildb-beverage.handlebars')
 // external beverage db methods
+
 const getRamdomBeverageSuccess = function (data) {
   $('#messages').show().html('We hope you enjoy this beverage!').fadeOut(8000)
   console.log('getRamdomBeverageSuccess data is:', data)
+  const showRandomBevHtml = randomBeveragesTemplate({ drinks: data.drinks })
+  $('#random_bev_target').append(showRandomBevHtml)
 }
 
 const getRamdomBeverageFailure = function (error) {
@@ -37,6 +39,7 @@ const addBeverageFailure = function (error) {
 }
 
 const viewAllBeveragesSuccess = function (data) {
+  console.log('viewAllBeveragesSuccess data is :', data)
   const showAllBevsHtml = viewAllBeveragesTemplate({ beverages: data.beverages })
   $('#all_beverages_target').append(showAllBevsHtml)
 }

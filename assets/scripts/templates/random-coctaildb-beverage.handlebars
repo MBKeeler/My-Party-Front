@@ -2,22 +2,22 @@
 
     {{#if drink}}
         <tr data-id="{{drink.idDrink}}">
-          <td align="left">{{drink.strDrink}}</td>
-          <td align="left">{{drink.strAlcoholic}}</td>
-          <td align="left">{{drink.strCategory}}</td>
-          <td align="left">
-            {{strMeasure1}} {{strIngredient1}}<br>
-            {{strMeasure2}} {{strIngredient2}}<br>
-            {{strMeasure3}} {{strIngredient3}}<br>
-            {{strMeasure4}} {{strIngredient4}}<br>
-            {{strMeasure5}} {{strIngredient5}}<br>
-            {{strMeasure6}} {{strIngredient6}}<br>
-            {{strMeasure7}} {{strIngredient7}}<br>
-            {{strMeasure8}} {{strIngredient8}}<br>
-            {{strMeasure9}} {{strIngredient9}}<br>
-            {{strMeasure10}} {{strIngredient10}}
+          <td valign="top" align="left">{{drink.strDrink}}</td>
+          <td valign="top" align="left">{{drink.strAlcoholic}}</td>
+          <td valign="top" align="left">{{drink.strCategory}}</td>
+          <td valign="top" align="left">
+            {{drink.strMeasure1}} {{drink.strIngredient1}}<br>
+            {{drink.strMeasure2}} {{drink.strIngredient2}}<br>
+            {{drink.strMeasure3}} {{drink.strIngredient3}}<br>
+            {{drink.strMeasure4}} {{drink.strIngredient4}}<br>
+            {{drink.strMeasure5}} {{drink.strIngredient5}}<br>
+            {{drink.strMeasure6}} {{drink.strIngredient6}}<br>
+            {{drink.strMeasure7}} {{drink.strIngredient7}}<br>
+            {{drink.strMeasure8}} {{drink.strIngredient8}}<br>
+            {{drink.strMeasure9}} {{drink.strIngredient9}}<br>
+            {{drink.strMeasure10}} {{drink.strIngredient10}}
           </td>
-          <tdalign="left">{{strInstructions}}</td>
+          <td valign="top" align="left">{{drink.strInstructions}}</td>
         </tr>
 {{else}}
     <p>We are unable to connect to <a href="https://www.thecoctaildb.com">The Coctail DB</a> to get your request.  Please try again later.</p>

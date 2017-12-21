@@ -33,6 +33,15 @@ button {
 input, select {
   color: #444;
 }
+
+th, td {
+    padding: 10px;
+}
+
+tr:nth-child(odd) {
+  background: #444;
+}
+
 // class level styling
 
 .informational_box {
@@ -40,6 +49,18 @@ input, select {
   margin: 10px;
   float: left;
 }
+
+.landing_page_featurette {
+  clear: both;
+  margin: 10px;
+}
+
+.list_table {
+  width: 100%;
+  border: 1px solid #fff;
+}
+
+
 
 // id level styling
 #app_body {
