@@ -1,6 +1,10 @@
 'use strict'
 // const store = require('../store')
 
+// const myTemplate = require('../templates/temlate.handlebars')
+
+const viewAllBeveragesTemplate = require('../templates/all-beverages.handlebars')
+
 // external beverage db methods
 const getRamdomBeverageSuccess = function (data) {
   $('#messages').show().html('We hope you enjoy this beverage!').fadeOut(8000)
@@ -32,6 +36,16 @@ const addBeverageFailure = function (error) {
   $('#messages').show().html('There was a problem adding your beverage. Please check that all fields were filled out correctly.').fadeOut(8000)
 }
 
+const viewAllBeveragesSuccess = function (data) {
+  const showAllBevsHtml = viewAllBeveragesTemplate({ beverages: data.beverages })
+  $('#all_beverages_target').append(showAllBevsHtml)
+}
+
+const viewAllBeveragesFailure = function (error) {
+  console.error('listAllBeverages failed: ', error)
+  $('#messages').show().html('There was a problem getting a list of all beverages.').fadeOut(8000)
+}
+
 // begin navigation methods
 const goToAddBeverage = function () {
   $('#all_beverages_panel').hide()
@@ -58,6 +72,8 @@ module.exports = {
   getExternalBeverageFailure,
   addBeverageSuccess,
   addBeverageFailure,
+  viewAllBeveragesSuccess,
+  viewAllBeveragesFailure,
   goToAddBeverage,
   goToAllBeverages,
   goToMyBeverages

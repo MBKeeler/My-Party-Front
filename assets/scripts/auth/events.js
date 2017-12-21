@@ -90,6 +90,12 @@ const onAddBeverage = function (event) {
     .catch(app_ui.addBeverageFailure)
 }
 
+const onViewAllBeverages = function () {
+  event.preventDefault()
+  app_api.listAllBeverages()
+  .then(app_ui.viewAllBeveragesSuccess)
+  .catch(app_ui.viewAllBeveragesFailure)
+}
 // navigation bar button methods
 
 const onGoAddBeverage = function (event) {
@@ -122,7 +128,7 @@ const addHandlers = function () {
   // begin app navigation handlers
   $('#go_add_beverage').on('click', onGoAddBeverage)
   $('#go_all_beverages').on('click', onGoAllBeverages)
-  $('#go_my_beverages').on('click', onGoMyBeverages)
+  $('#go_my_beverages').on('click', onGoMyBeverages).on('click', onViewAllBeverages)
 }
 
 module.exports = {
