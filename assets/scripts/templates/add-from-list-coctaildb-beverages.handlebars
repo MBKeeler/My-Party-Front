@@ -1,0 +1,15 @@
+{{#each drinks as |drink|}}
+
+    {{#if drink}}
+        <tr data-id="{{drink.idDrink}}">
+          <td align="left">{{drink.strDrink}}</td>
+          <td align="left">{{drink.strAlcoholic}}</td>
+          <td align="left">{{drink.strCategory}}</td>
+          <td align="left">{{drink.strDrinkThumb}}</td>
+          <td><button id="addDrnkBttn" value="{{drink.idDrink}}" name='addDrnkBttn' type='click'>Add</button></td>
+        </tr>
+{{else}}
+    <p>We are unable to connect to <a href="https://www.thecoctaildb.com">The Coctail DB</a> to get your request.  Please try again later.</p>
+{{/if}}
+
+{{/each}}
