@@ -35,7 +35,11 @@ input, select {
 }
 // class level styling
 
-
+.informational_box {
+  width: 40%;
+  margin: 10px;
+  float: left;
+}
 
 // id level styling
 #app_body {
