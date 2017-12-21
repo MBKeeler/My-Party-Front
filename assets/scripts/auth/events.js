@@ -61,13 +61,22 @@ const onChangePassword = function (event) {
   }
 }
 
-// being exertan db events
+// being exeternal db events
 
 const randomBeverageOnLoad = function (event) {
   console.log('randomBeverageOnLoad called')
   app_api.getRandomCoctail()
     .then(app_ui.getRamdomBeverageSuccess)
     .catch(app_ui.getRamdomBeverageFailure)
+}
+
+const searchTheCoctailDbByName = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  console.log('searchTheCoctailDbByName called with data:', data)
+  app_api.cockTailDbNameSearch(data)
+    .then(app_ui.getExternalBeverageSuccess)
+    .catch(app_ui.getExternalBeverageFailure)
 }
 
 // begin app events
@@ -107,6 +116,7 @@ const addHandlers = function () {
   $('#change-password').on('submit', onChangePassword)
   // begin external db related Handlers
   $(document).ready(randomBeverageOnLoad)
+  $('#search_externalDB_form').on('submit', searchTheCoctailDbByName)
   // begin app event handlers
   $('#add_beverage_form').on('submit', onAddBeverage)
   // begin app navigation handlers

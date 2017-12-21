@@ -8,9 +8,9 @@ const randomCoctail = 'http://www.thecocktaildb.com/api/json/v1/1/random.php'
 // search thecocktaildb.com
 
 const cockTailDbNameSearch = function (data) {
-  console.log('app_api.cockTailDbSearch called', data)
+  console.log('app_api.cockTailDbSearch called', data.search_name)
   return $.ajax({
-    url: cockTailDbName + data,
+    url: cockTailDbName + data.search_name,
     method: 'GET'
     // headers: {
     //   Authorization: 'Token token=' + store.user.token

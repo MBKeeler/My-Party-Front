@@ -107,6 +107,17 @@
         <div class="col-sm-8" id="main-view">
           <div id="landing_page_panel" onload="randomBeverageOnLoad">
             Landing Page
+            <div class="landing_page_featurette" id="random_beverage"></div>
+            <div class="landing_page_featurette" id="search_external_beverage">
+              <h4>Search thecocktaildb.com</h4>
+              <p>From here you can search thecocktaildb.com's db of over 550 unique beverages for your occassion. Login and you can keep track of your own party favorites.</p>
+              <form id="search_externalDB_form">
+                <fieldset>
+                  <input type="text" name="search_name" placeholder="Enter a Beverage Name">
+                  <button type="submit" name="submit" value="Search for a Beverage">Search</button>
+                </fieldset>
+              </form>
+            </div>
           </div>
           <div id="all_beverages_panel">
             <div class="navbar"><button type="click" id="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" id="go_my_beverages" name="go_add_beverage">View My Beverages</button>

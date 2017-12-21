@@ -9,10 +9,20 @@ const getRamdomBeverageSuccess = function (data) {
 
 const getRamdomBeverageFailure = function (error) {
   console.error(' Failed to retreive a random beverage: ', error)
-  $('#messages').show().html('There was a problem getting a random beverage for you..').fadeOut(8000)
+  $('#messages').show().html('There was a problem getting a random beverage for you.').fadeOut(8000)
 }
 
-// beverage action methods
+const getExternalBeverageSuccess = function (data) {
+  console.log('getRamdomBeverageSuccess data is:', data)
+  // handlebars template code to go here
+}
+
+const getExternalBeverageFailure = function (error) {
+  console.error(' Failed to retreive a beverage from thecoctaildb.com: ', error)
+  $('#messages').show().html('There was a problem getting a your beverage from thecoctaildb.com.  Try again later.').fadeOut(8000)
+}
+
+// beverage app action methods
 const addBeverageSuccess = function () {
   $('#messages').show().html('Beverage was added successfully').fadeOut(8000)
   $(':input', '#enter-player').val('')
@@ -44,6 +54,8 @@ const goToMyBeverages = function () {
 module.exports = {
   getRamdomBeverageSuccess,
   getRamdomBeverageFailure,
+  getExternalBeverageSuccess,
+  getExternalBeverageFailure,
   addBeverageSuccess,
   addBeverageFailure,
   goToAddBeverage,
