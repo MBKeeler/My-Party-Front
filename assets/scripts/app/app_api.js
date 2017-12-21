@@ -33,10 +33,21 @@ const getRandomCoctail = function () {
 
 // Rails api
 
-const listAllBeverages = function () {
+const listAllUserBeverages = function () {
   console.log('listAllBeverages called')
   return $.ajax({
     url: config.apiOrigin + '/beverages',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const listAllBeverages = function () {
+  console.log('listAllBeverages called')
+  return $.ajax({
+    url: config.apiOrigin + '/all_beverages',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -84,6 +95,7 @@ const deleteBeverage = function (data) {
 module.exports = {
   cockTailDbNameSearch,
   getRandomCoctail,
+  listAllUserBeverages,
   listAllBeverages,
   addBeverage,
   modifyBeverage,

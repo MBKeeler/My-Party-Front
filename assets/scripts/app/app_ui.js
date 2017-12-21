@@ -1,5 +1,5 @@
 'use strict'
-// const store = require('../store')
+const store = require('../store')
 
 // const myTemplate = require('../templates/temlate.handlebars')
 const viewAllBeveragesTemplate = require('../templates/all-beverages.handlebars')
@@ -46,6 +46,7 @@ const addBeverageFailure = function (error) {
 const viewAllBeveragesSuccess = function (data) {
   console.log('viewAllBeveragesSuccess data is :', data)
   const showAllBevsHtml = viewAllBeveragesTemplate({ beverages: data.beverages })
+  $('#all_beverages_target').empty()
   $('#all_beverages_target').append(showAllBevsHtml)
 }
 
@@ -86,6 +87,7 @@ const goToMyBeverages = function () {
 }
 
 const hideChngePwForm = function () {
+  $(':input', '#change-password').val('')
   $('#change_pw').collapse('hide')
 }
 

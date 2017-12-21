@@ -93,8 +93,16 @@ const onAddBeverage = function (event) {
 const onViewAllBeverages = function () {
   event.preventDefault()
   app_api.listAllBeverages()
-  .then(app_ui.viewAllBeveragesSuccess)
-  .catch(app_ui.viewAllBeveragesFailure)
+    .then(app_ui.viewAllBeveragesSuccess)
+    .catch(app_ui.viewAllBeveragesFailure)
+}
+
+const onViewMyBeverages = function () {
+  console.log('onViewMyBeverages called')
+  event.preventDefault()
+  app_api.listAllUserBeverages()
+    .then(app_ui.viewMyBeveragesSuccess)
+    .catch(app_ui.viewMyBeveragesFailure)
 }
 // navigation bar button methods
 
@@ -131,8 +139,8 @@ const addHandlers = function () {
   $('#add_beverage_form').on('submit', onAddBeverage)
   // begin app navigation handlers
   $('#go_add_beverage').on('click', onGoAddBeverage)
-  $('#go_all_beverages').on('click', onGoAllBeverages)
-  $('#go_my_beverages').on('click', onGoMyBeverages).on('click', onViewAllBeverages)
+  $('#go_all_beverages').on('click', onGoAllBeverages).on('click', onViewAllBeverages)
+  $('#go_my_beverages').on('click', onGoMyBeverages).on('click', onViewMyBeverages)
   $('#cancel').on('click', onHideChngePwForm)
 }
 

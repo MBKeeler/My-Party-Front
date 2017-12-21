@@ -66,7 +66,7 @@ const signOutFailure = function (error) {
 const changePWSuccess = function () {
   $('#messages').show().html('You have successfully changed your password').fadeOut(8000)
   $(':input', '#change-password').val('')
-  $('#change-password').hide()
+  $('#change-password').collapse('hide')
 }
 
 const changePWFailure = function (error) {
