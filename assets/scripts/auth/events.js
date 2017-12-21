@@ -61,7 +61,17 @@ const onChangePassword = function (event) {
   }
 }
 
+// being exertan db events
+
+const randomBeverageOnLoad = function (event) {
+  console.log('randomBeverageOnLoad called')
+  app_api.getRandomCoctail()
+    .then(app_ui.getRamdomBeverageSuccess)
+    .catch(app_ui.getRamdomBeverageFailure)
+}
+
 // begin app events
+
 const onAddBeverage = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
@@ -95,6 +105,8 @@ const addHandlers = function () {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  // begin external db related Handlers
+  $(document).ready(randomBeverageOnLoad)
   // begin app event handlers
   $('#add_beverage_form').on('submit', onAddBeverage)
   // begin app navigation handlers

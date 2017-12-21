@@ -1,13 +1,25 @@
 'use strict'
 // const store = require('../store')
 
+// external beverage db methods
+const getRamdomBeverageSuccess = function (data) {
+  $('#messages').show().html('We hope you enjoy this beverage!').fadeOut(8000)
+  console.log('getRamdomBeverageSuccess data is:', data)
+}
+
+const getRamdomBeverageFailure = function (error) {
+  console.error(' Failed to retreive a random beverage: ', error)
+  $('#messages').show().html('There was a problem getting a random beverage for you..').fadeOut(8000)
+}
+
+// beverage action methods
 const addBeverageSuccess = function () {
   $('#messages').show().html('Beverage was added successfully').fadeOut(8000)
   $(':input', '#enter-player').val('')
 }
 const addBeverageFailure = function (error) {
   console.error('enterPlayer failed: ', error)
-  $('#messages').show().html('There was a problem adding your beverage.').fadeOut(8000)
+  $('#messages').show().html('There was a problem adding your beverage. Please check that all fields were filled out correctly.').fadeOut(8000)
 }
 
 // begin navigation methods
@@ -30,6 +42,8 @@ const goToMyBeverages = function () {
 }
 
 module.exports = {
+  getRamdomBeverageSuccess,
+  getRamdomBeverageFailure,
   addBeverageSuccess,
   addBeverageFailure,
   goToAddBeverage,
