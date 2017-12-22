@@ -196,12 +196,10 @@
                   <td id="occasion_target"></td>
                 </tr>
               </table>
-              <div id="exampleAccordion" data-children=".item">
-                <div class="item">
-                  <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="true" aria-controls="exampleAccordion1">
-                    <h4 id="modify_heading">Modify Selected Beverage</h4>
-                  </a>
-                  <div class="mb-3" id="exampleAccordion1" class="collapse show" role="tabpanel">
+              <button class="btn btn-primary" id="mod_bev_button" type="button" data-toggle="collapse" data-target="#mod_a_beverage" aria-expanded="false" aria-controls="mod_a_beverage">Click to Modify Selected Beverage</button>
+              <br><br>
+              <div class="card card-body" id="mod_a_bev_container">
+                <div class="collapse" id="mod_a_beverage">
                     <form id="modify_beverage_form">
                       <fieldset>
                           <input id="mod_id" type="hidden" name="beverage[id]">
@@ -210,11 +208,11 @@
                           <br>
                           <input id="mod_occasion" type="text" name="beverage[occasion]" placeholder="Occasion">
                           <br>
-                          <input id="mod_description" type="text" name="beverage[description]" placeholder="Description">
+                          <input id="mod_description" size="30" type="text" name="beverage[description]" placeholder="Description">
                           <br>
-                          <input id="mod_recipe" type="text" name="beverage[recipe]" placeholder="Recipe">
+                          <textarea id="mod_recipe" rows="3" cols="50" name="beverage[recipe]" form="modify_beverage_form" placeholder="Enter Ingredients"></textarea>
                           <br>
-                          <input id="mod_instructions" type="text" name="beverage[instructions]" placeholder="Instructions">
+                          <textarea id="mod_instructions" rows="3" cols="50" name="beverage[instructions]" form="modify_beverage_form" placeholder="Enter Instructions"></textarea>
                           <br>
                           <input id="mod_rating" type="text" name="beverage[rating]" placeholder="Rating">
                           <br>
@@ -222,7 +220,6 @@
                       </fieldset>
                     </form>
                   </div>
-                </div>
               </div>
             </div>
             <!-- ends show_my_beverage -->
@@ -234,7 +231,7 @@
               <form id="add_beverage_form">
                 <fieldset>
                   <legend>Add a New Beverage</legend>
-                    <input type="text" name="beverage[name]" placeholder="Beverage Name">
+                    <input type="text" name="beverage[name]" placeholder="Beverage Name" required>
                     <br>
                     <select id="occasion_selector" name="beverage[occasion]" required>
                       <option value="" disabled="disabled" selected="selected">Select an Occasion</option>
@@ -253,13 +250,11 @@
                       <option value="Sporting Event">Sporting Event</option>
                   </select>
                     <br>
-                    <input type="text" name="beverage[description]" placeholder="Description">
+                    <input type="text" size="30" name="beverage[description]" placeholder="Description" required>
                     <br>
-                    <!-- <input type="text" name="beverage[recipe]" placeholder="Ingredients"> -->
-                    <textarea rows="3" cols="50" name="beverage[recipe]" form="add_beverage_form" placeholder="Enter Ingredients"></textarea>
+                    <textarea rows="3" cols="50" name="beverage[recipe]" form="add_beverage_form" placeholder="Enter Ingredients" required></textarea>
                     <br>
-                    <!-- <input type="text" name="beverage[instructions]" placeholder="Instructions"> -->
-                    <textarea rows="3" cols="50" name="beverage[instructions]" form="add_beverage_form" placeholder="Enter Instructions"></textarea>
+                    <textarea rows="3" cols="50" name="beverage[instructions]" form="add_beverage_form" placeholder="Enter Instructions" required></textarea>
                     <br>
                     <input type="number" name="beverage[rating]" placeholder="Rating">
                     <br>
