@@ -5,6 +5,7 @@ const store = require('../store')
 const viewAllBeveragesTemplate = require('../templates/all-beverages.handlebars')
 const randomBeveragesTemplate = require('../templates/random-coctaildb-beverage.handlebars')
 const myBeveragesTemplate = require('../templates/edit-delete-beverages.handlebars')
+const showUserBeverage = require('../templates/show-beverage.handlebars')
 
 // external beverage db methods
 
@@ -78,6 +79,23 @@ const deleteBeverageFailure = function (error) {
   $('#messages').show().html('There was a problem deleting the beverage.').fadeOut(8000)
 }
 
+  // show my beverage
+const showMyBeverageSuccess = function (data) {
+  console.log('showMyBeverageSuccess called', data)
+  console.log('data.beverage.name', data.beverage.name)
+  $('#rating_target, #name_target, #name_target, #description_target, #recipe_target, #occasion_target').empty()
+  $('#rating_target').append(data.beverage.rating)
+  $('#name_target').append(data.beverage.name)
+  $('#description_target').append(data.beverage.description)
+  $('#recipe_target').append(data.beverage.recipe)
+  $('#occasion_target').append(data.beverage.occasion)
+}
+
+const showMyBeverageFailure = function (error) {
+  console.error('showUserBeverage failed: ', error)
+  $('#messages').show().html('There was a problem loading your beverage.').fadeOut(8000)
+}
+
 // begin navigation methods
 const goToAddBeverage = function () {
   $('#all_beverages_panel').hide()
@@ -115,6 +133,8 @@ module.exports = {
   viewMyBeveragesFailure,
   deleteBeverageSuccess,
   deleteBeverageFailure,
+  showMyBeverageSuccess,
+  showMyBeverageFailure,
   goToAddBeverage,
   goToAllBeverages,
   goToMyBeverages,

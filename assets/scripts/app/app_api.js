@@ -92,6 +92,18 @@ const deleteBeverage = function (data) {
   })
 }
 
+const showUserBeverage = function (data) {
+  console.log('showUserBeverage called with data', data)
+  return $.ajax({
+    url: config.apiOrigin + '/beverages/' + data,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   cockTailDbNameSearch,
   getRandomCoctail,
@@ -99,5 +111,6 @@ module.exports = {
   listAllBeverages,
   addBeverage,
   modifyBeverage,
-  deleteBeverage
+  deleteBeverage,
+  showUserBeverage
 }

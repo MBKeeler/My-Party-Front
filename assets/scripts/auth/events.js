@@ -109,10 +109,18 @@ const onDeleteBeverage = function (event) {
   console.log('onDeleteBeverage called')
   event.preventDefault()
   const data = $(event.target).attr('value')
-  // console.log('data', data)
   app_api.deleteBeverage(data)
     .then(app_ui.deleteBeverageSuccess)
     .catch(app_ui.deleteBeverageFailure)
+}
+
+const onViewBeverage = function (event) {
+  console.log('onViewBeverage called')
+  event.preventDefault()
+  const data = $(event.target).attr('value')
+  app_api.showUserBeverage(data)
+    .then(app_ui.showMyBeverageSuccess)
+    .catch(app_ui.showMyBeverageFailure)
 }
 
 // navigation bar button methods
@@ -149,6 +157,7 @@ const addHandlers = function () {
   // begin app event handlers
   $('#add_beverage_form').on('submit', onAddBeverage)
   $('#my_beverages_target').on('click', '#delBvgBttn', onDeleteBeverage)
+  $('#my_beverages_target').on('click', '#viewBvgBttn', onViewBeverage)
   // begin app navigation handlers
   $('#go_add_beverage').on('click', onGoAddBeverage)
   $('#go_all_beverages').on('click', onGoAllBeverages).on('click', onViewAllBeverages)
