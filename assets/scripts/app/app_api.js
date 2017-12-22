@@ -2,8 +2,8 @@
 
 const config = require('../config')
 const store = require('../store')
-const cockTailDbName = 'http://www.thecocktaildb.com/api/json/v1/1/search.php?s='
-const randomCoctail = 'http://www.thecocktaildb.com/api/json/v1/1/random.php'
+const cockTailDbName = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
+const randomCoctail = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 
 // search thecocktaildb.com
 
