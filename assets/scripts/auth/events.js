@@ -150,6 +150,11 @@ const onGoMyBeverages = function (event) {
   app_ui.goToMyBeverages()
 }
 
+const onGoToWelcome = function (event) {
+  event.preventDefault()
+  app_ui.goToWelcome()
+}
+
 const onHideChngePwForm = function (event) {
   app_ui.hideChngePwForm()
 }
@@ -172,6 +177,7 @@ const addHandlers = function () {
   $('.go_add_beverage').on('click', onGoAddBeverage)
   $('.go_all_beverages').on('click', onGoAllBeverages).on('click', onViewAllBeverages)
   $('.go_my_beverages').on('click', onGoMyBeverages).on('click', onViewMyBeverages)
+  $('.go_welcome').on('click', onGoToWelcome)
   $('#cancel').on('click', onHideChngePwForm)
 }
 

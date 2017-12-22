@@ -34,7 +34,7 @@ button {
     border: none;
     color: #fff;
     padding: 3px 6px;
-    margin: 5px 5px;
+    margin: 15px 5px;
     border-radius: 8px;
     text-align: center;
     text-decoration: none;
@@ -82,8 +82,9 @@ tr:nth-child(odd) {
   background-color: #565656;
 }
 
-#all_beverages_panel, #my_beverages_panel, #add_beverage_panel {
+#all_beverages_panel, #my_beverages_panel, #add_beverage_panel, #welcome_panel {
   display: none;
+  margin: 10px 20px 10px 10px;
 }
 
 #landing_page_panel {

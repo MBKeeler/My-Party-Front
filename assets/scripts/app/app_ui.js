@@ -124,19 +124,30 @@ const modifyBeverageFailure = function (error) {
 const goToAddBeverage = function () {
   $('#all_beverages_panel').hide()
   $('#my_beverages_panel').hide()
+  $('#welcome_panel').hide()
   $('#add_beverage_panel').show()
 }
 
 const goToAllBeverages = function () {
   $('#my_beverages_panel').hide()
   $('#add_beverage_panel').hide()
+  $('#welcome_panel').hide()
   $('#all_beverages_panel').show()
 }
 
 const goToMyBeverages = function () {
   $('#add_beverage_panel').hide()
   $('#all_beverages_panel').hide()
+  $('#welcome_panel').hide()
   $('#my_beverages_panel').show()
+  $('#exampleAccordion1').collapse('hide')
+}
+
+const goToWelcome = function () {
+  $('#add_beverage_panel').hide()
+  $('#all_beverages_panel').hide()
+  $('#my_beverages_panel').hide()
+  $('#welcome_panel').show()
 }
 
 const hideChngePwForm = function () {
@@ -164,5 +175,6 @@ module.exports = {
   goToAddBeverage,
   goToAllBeverages,
   goToMyBeverages,
+  goToWelcome,
   hideChngePwForm
 }

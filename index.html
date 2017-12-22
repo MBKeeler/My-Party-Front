@@ -128,11 +128,15 @@
               </table>
             </div>
             <!-- ends random_beverage display area -->
-
           </div>
           <!-- ends landing_page_panel -->
+          <div id="welcome_panel">
+            <div class="navbar"><button type="click" class="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" class="go_my_beverages" name="go_my_beverages">View My Beverages</button><button type="click" class="go_all_beverages" name="go_all_beverages">View All Beverages</button></div>
+            <h4>Welcome panel</h4>
+          </div>
+          <!-- ends welcome_panel -->
           <div id="all_beverages_panel">
-            <div class="navbar"><button type="click" class="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" class="go_my_beverages" name="go_add_beverage">View My Beverages</button>
+            <div class="navbar"><button type="click" class="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" class="go_my_beverages" name="go_my_beverages">View My Beverages</button><button type="click" class="go_welcome" name="go_welcome">Back to Welcome Page</button>
             </div>
             <h4>Here is what is others are adding to My Party!</h4>
             <div id="all_beverages">
@@ -142,7 +146,8 @@
                     <th>Rating</th>
                     <th>Name</th>
                     <th>Description</th>
-                    <th>Occasion</th>
+                    <th>Ingredients</th>
+                    <th>Instructions</th>
                   </tr>
                 </thead>
                 <tbody id="all_beverages_target">
@@ -152,8 +157,8 @@
           </div>
           <!-- ends all_beverages_panel -->
           <div id="my_beverages_panel">
-            <div class="navbar"><button type="click" class="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" class="go_all_beverages" name="go_add_beverage">View All Beverages</button></div>
-            My Beverages Panel
+            <div class="navbar"><button type="click" class="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" class="go_all_beverages" name="go_all_beverages">View All Beverages</button><button type="click" class="go_welcome" name="go_welcome">Back to Welcome Page</button></div>
+            <h4>My Beverages Panel</h4>
             <div id="my_beverages">
               <table class="list_table" style="width:100%">
                 <thead class="list_head">
@@ -193,7 +198,7 @@
               </table>
               <div id="exampleAccordion" data-children=".item">
                 <div class="item">
-                  <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="false" aria-controls="exampleAccordion1">
+                  <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="true" aria-controls="exampleAccordion1">
                     <h4 id="modify_heading">Modify Selected Beverage</h4>
                   </a>
                   <div class="mb-3" id="exampleAccordion1" class="collapse show" role="tabpanel">
@@ -216,9 +221,6 @@
                           <button type="submit" name="submit" value="Update Beverage">Update Beverage</button>
                       </fieldset>
                     </form>
-                    <!-- <p class="mb-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.
-                    </p> -->
                   </div>
                 </div>
               </div>
@@ -227,8 +229,8 @@
           </div>
           <!-- ends my_beverages_panel -->
           <div id="add_beverage_panel">
-            <div class="navbar"><button type="click" class="go_all_beverages" name="go_add_beverage">View All Beverages</button><button type="click" class="go_my_beverages" name="go_add_beverage">View My Beverages</button></div>
-            <div id="add_t ">
+            <div class="navbar"><button type="click" class="go_all_beverages" name="go_all_beverages">View All Beverages</button><button type="click" class="go_my_beverages" name="go_my_beverages">View My Beverages</button><button type="click" class="go_welcome" name="go_welcome">Back to Welcome Page</button></div>
+            <div id="add_beverage">
               <form id="add_beverage_form">
                 <fieldset>
                   <legend>Add a New Beverage</legend>
@@ -274,6 +276,7 @@
                 <form id="search_externalDB_form">
                   <fieldset>
                     <input type="text" name="search_name" size="25" placeholder="Enter a Beverage Name">
+                    <br>
                     <button type="submit" name="submit" value="Search for a Beverage">Search The Coctail DB</button>
                   </fieldset>
                 </form>

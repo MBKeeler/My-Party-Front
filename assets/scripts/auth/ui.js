@@ -23,12 +23,13 @@ const signInSuccess = function (data) {
   $('#login_forms').hide()
   $('#landing_page_panel').hide()
   $('#all_beverages_panel').hide()
+  $('#my_beverages_panel').hide()
   // reveals the pw change and logout buttons
   $('#change_pw_bttn').show()
   $('#change_pw_container').show()
   $('#sign-out').show()
   // reveals the user's Beverage panel
-  $('#my_beverages_panel').show()
+  $('#welcome_panel').show()
 }
 
 const signInFailure = function (error) {
@@ -44,6 +45,7 @@ const signOutSuccess = function () {
   // mesage to user
   $('#messages').html('You have signed out successfully')
   // empty and hide the user's panels
+  $('#welcome_panel').hide()
   $('#my_beverages_panel').empty().hide()
   $('#add_beverage_panel').empty().hide()
   $('#all_beverages_panel').empty().hide()
