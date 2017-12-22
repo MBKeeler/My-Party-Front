@@ -15,7 +15,7 @@ const signUp = function (data) {
 }
 
 const signIn = function (data) {
-  console.log('signIn called with data;', data)
+  // console.log('signIn called with data;', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
@@ -35,9 +35,9 @@ const signOut = function () {
 }
 
 const changePassWord = function (data) {
-  console.log('changePW called', data)
-  console.log('user id is ', store.user.id)
-  console.log('user token is ', store.user.token)
+  // console.log('changePW called', data)
+  // console.log('user id is ', store.user.id)
+  // console.log('user token is ', store.user.token)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',

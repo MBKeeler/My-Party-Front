@@ -9,7 +9,7 @@ const myBeveragesTemplate = require('../templates/edit-delete-beverages.handleba
 
 const getRamdomBeverageSuccess = function (data) {
   $('#messages').show().html('We hope you enjoy this beverage!').fadeOut(8000)
-  console.log('getRamdomBeverageSuccess data is:', data)
+  // console.log('getRamdomBeverageSuccess data is:', data)
   const showRandomBevHtml = randomBeveragesTemplate({ drinks: data.drinks })
   $('#random_bev_target').append(showRandomBevHtml)
 }
@@ -20,7 +20,7 @@ const getRamdomBeverageFailure = function (error) {
 }
 
 const getExternalBeverageSuccess = function (data) {
-  console.log('getRamdomBeverageSuccess data is:', data)
+  // console.log('getRamdomBeverageSuccess data is:', data)
   const showExternalDBListHTML = randomBeveragesTemplate({ drinks: data.drinks })
   $('#search_externalDB_target').append(showExternalDBListHTML)
 }
@@ -44,7 +44,7 @@ const addBeverageFailure = function (error) {
 
   // list all beverages
 const viewAllBeveragesSuccess = function (data) {
-  console.log('viewAllBeveragesSuccess data is :', data)
+  // console.log('viewAllBeveragesSuccess data is :', data)
   const showAllBevsHtml = viewAllBeveragesTemplate({ beverages: data.beverages })
   $('#all_beverages_target').empty()
   $('#all_beverages_target').append(showAllBevsHtml)

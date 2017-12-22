@@ -11,7 +11,7 @@ const app_ui = require('../app/app_ui')
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('sign-up', data)
+  // console.log('sign-up', data)
   // check to make sure pws match
   if (data.credentials.password !== data.credentials.password_confirmation) {
     ui.pwDontMatch()
@@ -26,7 +26,7 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('sign-in', data)
+  // console.log('sign-in', data)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -64,7 +64,7 @@ const onChangePassword = function (event) {
 // being exeternal db events
 
 const randomBeverageOnLoad = function (event) {
-  console.log('randomBeverageOnLoad called')
+  // console.log('randomBeverageOnLoad called')
   app_api.getRandomCoctail()
     .then(app_ui.getRamdomBeverageSuccess)
     .catch(app_ui.getRamdomBeverageFailure)
@@ -73,7 +73,7 @@ const randomBeverageOnLoad = function (event) {
 const searchTheCoctailDbByName = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('searchTheCoctailDbByName called with data:', data)
+  // console.log('searchTheCoctailDbByName called with data:', data)
   app_api.cockTailDbNameSearch(data)
     .then(app_ui.getExternalBeverageSuccess)
     .catch(app_ui.getExternalBeverageFailure)
@@ -84,7 +84,7 @@ const searchTheCoctailDbByName = function (event) {
 const onAddBeverage = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('onAddBeverage called with data:', data)
+  // console.log('onAddBeverage called with data:', data)
   app_api.addBeverage(data)
     .then(app_ui.addBeverageSuccess)
     .catch(app_ui.addBeverageFailure)
@@ -98,7 +98,7 @@ const onViewAllBeverages = function () {
 }
 
 const onViewMyBeverages = function () {
-  console.log('onViewMyBeverages called')
+  // console.log('onViewMyBeverages called')
   event.preventDefault()
   app_api.listAllUserBeverages()
     .then(app_ui.viewMyBeveragesSuccess)
@@ -106,7 +106,7 @@ const onViewMyBeverages = function () {
 }
 
 const onDeleteBeverage = function (event) {
-  console.log('onDeleteBeverage called')
+  // console.log('onDeleteBeverage called')
   event.preventDefault()
   const data = $(event.target).attr('value')
   app_api.deleteBeverage(data)
@@ -115,7 +115,7 @@ const onDeleteBeverage = function (event) {
 }
 
 const onViewBeverage = function (event) {
-  console.log('onViewBeverage called')
+  // console.log('onViewBeverage called')
   event.preventDefault()
   const data = $(event.target).attr('value')
   app_api.showUserBeverage(data)
@@ -126,7 +126,7 @@ const onViewBeverage = function (event) {
 const onUpdateBeverage = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('onUpdateBeverage called with data:', data)
+  // console.log('onUpdateBeverage called with data:', data)
   app_api.modifyBeverage(data)
     .then(app_ui.modifyBeverageSuccess)
     .catch(app_ui.modifyBeverageFailure)
@@ -136,7 +136,7 @@ const onUpdateBeverage = function (event) {
 
 const onGoAddBeverage = function (event) {
   event.preventDefault()
-  console.log('onGoAddBeverage called')
+  // console.log('onGoAddBeverage called')
   app_ui.goToAddBeverage()
 }
 

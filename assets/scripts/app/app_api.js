@@ -8,7 +8,7 @@ const randomCoctail = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 // search thecocktaildb.com
 
 const cockTailDbNameSearch = function (data) {
-  console.log('app_api.cockTailDbSearch called', data.search_name)
+  // console.log('app_api.cockTailDbSearch called', data.search_name)
   return $.ajax({
     url: cockTailDbName + data.search_name,
     method: 'GET'
@@ -20,7 +20,7 @@ const cockTailDbNameSearch = function (data) {
 }
 
 const getRandomCoctail = function () {
-  console.log('app_api.getRandomCoctail called')
+  // console.log('app_api.getRandomCoctail called')
   return $.ajax({
     url: randomCoctail,
     method: 'GET'
@@ -34,7 +34,7 @@ const getRandomCoctail = function () {
 // Rails api
 
 const listAllUserBeverages = function () {
-  console.log('listAllBeverages called')
+  // console.log('listAllBeverages called')
   return $.ajax({
     url: config.apiOrigin + '/beverages',
     method: 'GET',
@@ -45,7 +45,7 @@ const listAllUserBeverages = function () {
 }
 
 const listAllBeverages = function () {
-  console.log('listAllBeverages called')
+  // console.log('listAllBeverages called')
   return $.ajax({
     url: config.apiOrigin + '/all_beverages',
     method: 'GET',
@@ -56,7 +56,7 @@ const listAllBeverages = function () {
 }
 
 const addBeverage = function (data) {
-  console.log('app_api.addBeverage called:', data)
+  // console.log('app_api.addBeverage called:', data)
   return $.ajax({
     url: config.apiOrigin + '/beverages',
     method: 'POST',
@@ -68,7 +68,7 @@ const addBeverage = function (data) {
 }
 
 const modifyBeverage = function (data) {
-  console.log('app_api.modifyBeverage called: ', data.beverage.id)
+  // console.log('app_api.modifyBeverage called: ', data.beverage.id)
   const beverageId = data.beverage.id
   return $.ajax({
     url: config.apiOrigin + '/beverages/' + beverageId,
@@ -93,7 +93,7 @@ const deleteBeverage = function (data) {
 }
 
 const showUserBeverage = function (data) {
-  console.log('showUserBeverage called with data', data)
+  // console.log('showUserBeverage called with data', data)
   return $.ajax({
     url: config.apiOrigin + '/beverages/' + data,
     method: 'GET',

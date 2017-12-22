@@ -13,11 +13,11 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#messages').html('You have signed in successfully').fadeOut(8000)
   // we have to store the user data or header somwhere.  so we will put it in ../store.js
   store.user = data.user
-  console.log('user data is:', data.user)
+  // console.log('user data is:', data.user)
   // hides the sign in/sign up button and forms
   $('#show_auth_forms').hide()
   $('#login_forms').hide()
