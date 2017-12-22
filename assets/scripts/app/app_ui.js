@@ -5,7 +5,6 @@ const store = require('../store')
 const viewAllBeveragesTemplate = require('../templates/all-beverages.handlebars')
 const randomBeveragesTemplate = require('../templates/random-coctaildb-beverage.handlebars')
 const myBeveragesTemplate = require('../templates/edit-delete-beverages.handlebars')
-const showUserBeverage = require('../templates/show-beverage.handlebars')
 
 // external beverage db methods
 
