@@ -123,6 +123,15 @@ const onViewBeverage = function (event) {
     .catch(app_ui.showMyBeverageFailure)
 }
 
+const onUpdateBeverage = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('onUpdateBeverage called with data:', data)
+  app_api.modifyBeverage(data)
+    .then(app_ui.modifyBeverageSuccess)
+    .catch(app_ui.modifyBeverageFailure)
+}
+
 // navigation bar button methods
 
 const onGoAddBeverage = function (event) {
@@ -158,6 +167,7 @@ const addHandlers = function () {
   $('#add_beverage_form').on('submit', onAddBeverage)
   $('#my_beverages_target').on('click', '#delBvgBttn', onDeleteBeverage)
   $('#my_beverages_target').on('click', '#viewBvgBttn', onViewBeverage)
+  $('#modify_beverage_form').on('submit', onUpdateBeverage)
   // begin app navigation handlers
   $('#go_add_beverage').on('click', onGoAddBeverage)
   $('#go_all_beverages').on('click', onGoAllBeverages).on('click', onViewAllBeverages)

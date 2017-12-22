@@ -185,7 +185,38 @@
                   <td id="occasion_target"></td>
                 </tr>
               </table>
+              <div id="exampleAccordion" data-children=".item">
+                <div class="item">
+                  <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="false" aria-controls="exampleAccordion1">
+                    <h4 id="modify_heading">Modify Selected Beverage</h4>
+                  </a>
+                  <div class="mb-3" id="exampleAccordion1" class="collapse show" role="tabpanel">
+                    <form id="modify_beverage_form">
+                      <fieldset>
+                        <legend>Modify the Selected Beverage</legend>
+                          <input id="mod_id" type="hidden" name="beverage[id]">
+                          <br>
+                          <input id="mod_name" type="text" name="beverage[name]" placeholder="Beverage Name">
+                          <br>
+                          <input id="mod_occasion" type="text" name="beverage[occasion]" placeholder="Occasion">
+                          <br>
+                          <input id="mod_description" type="text" name="beverage[description]" placeholder="Description">
+                          <br>
+                          <input id="mod_recipe" type="text" name="beverage[recipe]" placeholder="Recipe">
+                          <br>
+                          <input id="mod_rating" type="text" name="beverage[rating]" placeholder="Rating">
+                          <br>
+                          <button type="submit" name="submit" value="Update Beverage">Update Beverage</button>
+                      </fieldset>
+                    </form>
+                    <!-- <p class="mb-3">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.
+                    </p> -->
+                  </div>
+                </div>
+              </div>
             </div>
+            <!-- ends show_my_beverage -->
           </div>
           <!-- ends my_beverages_panel -->
           <div id="add_beverage_panel">
@@ -223,22 +254,7 @@
             </div>
             <!-- ends add_beverage div -->
             <div id="modify_beverage">
-              <form id="modify_beverage_form">
-                <fieldset>
-                  <legend>Modify a New Beverage</legend>
-                    <input type="text" name="beverage[name]" placeholder="Beverage Name">
-                    <br>
-                    <input type="text" name="beverage[occasion]" placeholder="Occasion">
-                    <br>
-                    <input type="text" name="beverage[description]" placeholder="Description">
-                    <br>
-                    <input type="text" name="beverage[recipe]" placeholder="Recipe">
-                    <br>
-                    <input type="text" name="beverage[rating]" placeholder="Rating">
-                    <br>
-                    <button type="submit" name="submit" value="Update Beverage">Update Beverage</button>
-                </fieldset>
-              </form>
+
             </div>
             <!-- ends modify_beverage div-->
           </div>

@@ -1,6 +1,5 @@
 'use strict'
-const store = require('../store')
-
+// const store = require('../store')
 // const myTemplate = require('../templates/temlate.handlebars')
 const viewAllBeveragesTemplate = require('../templates/all-beverages.handlebars')
 const randomBeveragesTemplate = require('../templates/random-coctaildb-beverage.handlebars')
@@ -80,19 +79,42 @@ const deleteBeverageFailure = function (error) {
 
   // show my beverage
 const showMyBeverageSuccess = function (data) {
-  console.log('showMyBeverageSuccess called', data)
-  console.log('data.beverage.name', data.beverage.name)
+  // clears the display area for next selection
   $('#rating_target, #name_target, #name_target, #description_target, #recipe_target, #occasion_target').empty()
+  // clears the udate form values for the next selection
+  $('#mod_id, #mod_rating, #mod_name, #mod_description, #mod_recipe, #mod_occasion').val('')
   $('#rating_target').append(data.beverage.rating)
   $('#name_target').append(data.beverage.name)
   $('#description_target').append(data.beverage.description)
   $('#recipe_target').append(data.beverage.recipe)
   $('#occasion_target').append(data.beverage.occasion)
+  // prefils update form with selection
+  $('#mod_id').val(data.beverage.id)
+  $('#mod_rating').val(data.beverage.rating)
+  $('#mod_name').val(data.beverage.name)
+  $('#mod_description').val(data.beverage.description)
+  $('#mod_recipe').val(data.beverage.recipe)
+  $('#mod_occasion').val(data.beverage.occasion)
 }
 
 const showMyBeverageFailure = function (error) {
   console.error('showUserBeverage failed: ', error)
   $('#messages').show().html('There was a problem loading your beverage.').fadeOut(8000)
+}
+
+  // update a beverage
+
+const modifyBeverageSuccess = function () {
+  $('#messages').show().html('Beverage Updated.').fadeOut(8000)
+  // clears the display area for next selection
+  $('#rating_target, #name_target, #name_target, #description_target, #recipe_target, #occasion_target').empty()
+  // clears the udate form values for the next selection
+  $('#mod_id, #mod_rating, #mod_name, #mod_description, #mod_recipe, #mod_occasion').val('')
+}
+
+const modifyBeverageFailure = function (error) {
+  console.error('modifyBeverage failed: ', error)
+  $('#messages').show().html('There was a problem updating your beverage.').fadeOut(8000)
 }
 
 // begin navigation methods
@@ -134,6 +156,8 @@ module.exports = {
   deleteBeverageFailure,
   showMyBeverageSuccess,
   showMyBeverageFailure,
+  modifyBeverageSuccess,
+  modifyBeverageFailure,
   goToAddBeverage,
   goToAllBeverages,
   goToMyBeverages,
