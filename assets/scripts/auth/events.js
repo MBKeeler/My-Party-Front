@@ -169,9 +169,9 @@ const addHandlers = function () {
   $('#my_beverages_target').on('click', '#viewBvgBttn', onViewBeverage)
   $('#modify_beverage_form').on('submit', onUpdateBeverage)
   // begin app navigation handlers
-  $('#go_add_beverage').on('click', onGoAddBeverage)
-  $('#go_all_beverages').on('click', onGoAllBeverages).on('click', onViewAllBeverages)
-  $('#go_my_beverages').on('click', onGoMyBeverages).on('click', onViewMyBeverages)
+  $('.go_add_beverage').on('click', onGoAddBeverage)
+  $('.go_all_beverages').on('click', onGoAllBeverages).on('click', onViewAllBeverages)
+  $('.go_my_beverages').on('click', onGoMyBeverages).on('click', onViewMyBeverages)
   $('#cancel').on('click', onHideChngePwForm)
 }
 

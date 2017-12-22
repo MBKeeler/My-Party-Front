@@ -35,7 +35,7 @@ const getExternalBeverageFailure = function (error) {
   // add beverage
 const addBeverageSuccess = function () {
   $('#messages').show().html('Beverage was added successfully').fadeOut(8000)
-  $(':input', '#enter-player').val('')
+  $(':input', '#add_beverage_form').val('')
 }
 const addBeverageFailure = function (error) {
   console.error('enterPlayer failed: ', error)
@@ -81,14 +81,15 @@ const deleteBeverageFailure = function (error) {
   // show my beverage
 const showMyBeverageSuccess = function (data) {
   // clears the display area for next selection
-  $('#rating_target, #name_target, #name_target, #description_target, #recipe_target, #occasion_target').empty()
+  $('#rating_target, #name_target, #name_target, #description_target, #recipe_target, #occasion_target, #instructions_target').empty()
   // clears the udate form values for the next selection
-  $('#mod_id, #mod_rating, #mod_name, #mod_description, #mod_recipe, #mod_occasion').val('')
+  $('#mod_id, #mod_rating, #mod_name, #mod_description, #mod_recipe, #mod_occasion, #mod_instructions').val('')
   $('#rating_target').append(data.beverage.rating)
   $('#name_target').append(data.beverage.name)
   $('#description_target').append(data.beverage.description)
   $('#recipe_target').append(data.beverage.recipe)
   $('#occasion_target').append(data.beverage.occasion)
+  $('#instructions_target').append(data.beverage.instructions)
   // prefils update form with selection
   $('#mod_id').val(data.beverage.id)
   $('#mod_rating').val(data.beverage.rating)
@@ -96,6 +97,7 @@ const showMyBeverageSuccess = function (data) {
   $('#mod_description').val(data.beverage.description)
   $('#mod_recipe').val(data.beverage.recipe)
   $('#mod_occasion').val(data.beverage.occasion)
+  $('#mod_instructions').val(data.beverage.instructions)
 }
 
 const showMyBeverageFailure = function (error) {

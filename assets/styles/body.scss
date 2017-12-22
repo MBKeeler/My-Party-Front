@@ -11,6 +11,18 @@
 // }
 
 // tag level styling
+a:link {
+  color: #5cbcf2;
+}
+
+a:link {
+  color: #5cbcf2;
+}
+
+a:visited {
+  color: #f2d15c;
+}
+
 body {
   background-color: #000;
   color: #fff;
@@ -30,8 +42,9 @@ button {
     font-size: 14px;
 }
 
-input, select {
+input, select, textarea {
   color: #444;
+  margin: 5px;
 }
 
 th, td {
@@ -61,8 +74,6 @@ tr:nth-child(odd) {
   border: 1px solid #fff;
 }
 
-
-
 // id level styling
 #app_body {
   // float: left;
@@ -81,4 +92,8 @@ tr:nth-child(odd) {
 
 #modify_heading {
   color: #fff;
+}
+
+#list_head {
+  background-color: #3f6377;
 }
