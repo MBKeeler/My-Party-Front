@@ -22,6 +22,7 @@ const getRamdomBeverageFailure = function (error) {
 const getExternalBeverageSuccess = function (data) {
   // console.log('getRamdomBeverageSuccess data is:', data)
   const showExternalDBListHTML = randomBeveragesTemplate({ drinks: data.drinks })
+  $('#search_externalDB_target').empty()
   $('#search_externalDB_target').append(showExternalDBListHTML)
 }
 

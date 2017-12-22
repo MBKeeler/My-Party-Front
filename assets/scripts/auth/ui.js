@@ -4,12 +4,14 @@ const store = require('../store')
 // begin authentication relate functions
 const signUpSuccess = function (data) {
   // console.log(data)
-  $('#messages').html('You have signed up successfully. Now login.')
+  $('#messages').show()
+  $('#messages').html('You have signed up successfully. Now login.').fadeOut(8000)
 }
 
 const signUpFailure = function (error) {
   console.error(error)
-  $('#messages').html('Sign up has <span style="color:#f4c542">failed</span>. Please try again.')
+  $('#messages').show()
+  $('#messages').html('Sign up has <span style="color:#f4c542">failed</span>. Please try again.').fadeOut(8000)
 }
 
 const signInSuccess = function (data) {
