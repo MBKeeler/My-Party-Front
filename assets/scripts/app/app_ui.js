@@ -21,7 +21,8 @@ const getRamdomBeverageFailure = function (error) {
 
 const getExternalBeverageSuccess = function (data) {
   console.log('getRamdomBeverageSuccess data is:', data)
-  // handlebars template code to go here
+  const showExternalDBListHTML = randomBeveragesTemplate({ drinks: data.drinks })
+  $('#search_externalDB_target').append(showExternalDBListHTML)
 }
 
 const getExternalBeverageFailure = function (error) {
