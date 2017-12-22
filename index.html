@@ -14,7 +14,7 @@
     <body class="container-fluid" id="site-body">
 
       <div class="row" id="authbar">
-        <div class="col-sm-4" id="navigation">Branding</div>
+        <div class="col-sm-4" id="navigation"><img src="https://i.imgur.com/ZDGwJta.png" alt="My Party Logo"></div>
         <!-- ends the navigation panel -->
         <div class="col-sm-4" id="message_container">
           <span id="messages"></span>
@@ -85,13 +85,13 @@
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="item active">
-                <img class="d-block w-100" src="https://i.imgur.com/7rzkSZq.png" alt="First slide">
+                <img class="d-block w-100" src="https://i.imgur.com/KNzJChH.png" alt="First slide">
               </div>
               <div class="item">
-                <img class="d-block w-100" src="https://i.imgur.com/YH9mDXw.jpg" alt="Second slide">
+                <img class="d-block w-100" src="https://i.imgur.com/ZZXUxW7.png" alt="Second slide">
               </div>
               <div class="item">
-                <img class="d-block w-100" src="https://i.imgur.com/8iNa0TA.jpg" alt="Third slide">
+                <img class="d-block w-100" src="https://i.imgur.com/SpuUigV.png" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -106,13 +106,25 @@
         <!-- ends the sidebar -->
         <div class="col-sm-8" id="main-view">
           <div id="landing_page_panel" onload="randomBeverageOnLoad">
-            Landing Page
+            <h4>Welcome to My Party!</h4>
             <div id="site_information">
-              <div class="informational_box">Info box 1</div>
-              <div class="informational_box">Info box 2</div>
+              <div class="informational_box">
+                <p>My Party! is a tracking and discovery application to help revelers and
+                party-goers record their favorite drinks.  My Party! allows the user to enter
+                their own favorite beverages, assign a rating, and an occasion.  Users can
+                modify the recipes later if they want to improve upon what they already posted.</p>
+              </div>
+              <div class="informational_box">
+                <p>  My Party! is also a social site where beverages are crowd sourced.  As
+                  beverages are added by users signed up to the site, these beverages become
+                  available for viewing by all other members. The more members who join the
+                  better selection to choose from.  </p>
+              </div>
             </div>
             <!-- ends site information -->
             <div class="landing_page_featurette" id="random_beverage">
+              <h4>Say, you look thirsty.</h4>
+              <p>Why not try one of the random beverages of the day?  Courtesy of the folks at <a href="http://www.thecocktaildb.com/" target="_blank">The Cocktail DB</a> </p>
               <table class="list_table" style="width:100%">
                 <thead class="list_head">
                   <tr>
@@ -132,7 +144,20 @@
           <!-- ends landing_page_panel -->
           <div id="welcome_panel">
             <div class="navbar"><button type="click" class="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" class="go_my_beverages" name="go_my_beverages">View My Beverages</button><button type="click" class="go_all_beverages" name="go_all_beverages">View All Beverages</button></div>
-            <h4>Welcome panel</h4>
+            <h4>Welcome!</h4>
+            <div id="Welcome_information">
+              <div class="informational_box">
+                <h5>Where to Start?</h4>
+                <p>It's easy really, just navigate to the Add Beverages pane and you can begin entering your favorite beverages.  Can't think of a drink?  Well you can search through <a href="http://www.thecocktaildb.com/" target="_blank">The Cocktail DB</a> for drink ideas to help you on your way.  What?  Why not just go there instead?  </p>
+                <p>My Party! is about letting you keep the best beverage recipes on hand and tweak the recipes as you like. Add an occassion and you can start to put together quite the celebration. </p>
+                <p>Each beverage you enter is shared with the My Party! community.  The more members, the more ideas shared! Rememeber though, only you can modify or delete the recipes you put up.  So My Party! is dynamic with users sharing and updating their favorite beverages all the time!</p>
+              </div>
+              <div class="informational_box">
+                <h5>Need a little more inspiration?</h5>
+                <p>This site is about being entuesed. The internet is full of great ideas and people who share your interests. Enjoy this little gem and why not get into the spirit of things? </p>
+<iframe width="392" height="221" src="https://www.youtube-nocookie.com/embed/LBaDeVEKFFA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
           </div>
           <!-- ends welcome_panel -->
           <div id="all_beverages_panel">
@@ -299,8 +324,8 @@
       <!-- End of app_body -->
 
       <div class="row" id="footer">
-        <div class="col-sm-6">Footer 1st half</div>
-        <div class="col-sm-6">Footer 2nd half</div>
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6">My Party! is not affiliated with <a href="http://www.thecocktaildb.com/" target="_blank">The Cocktail DB</a>.  We just share an enthusiasm for sharing something good.</div>
       </div>
 
     </body>
