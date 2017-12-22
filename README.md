@@ -53,6 +53,11 @@ Github Pages (hosting front-end)
   production key will be used and code refactored so that the rest API calls
   will be made from the backend.   
 
+  KNOWN ISSUE - Internet speed/conditions may cause the results coming backend
+  from theCocktaildb to be delayed.  My Party! waits for a result. This may
+  manifest itself as a lag from when the user presses the button and the results
+  appear in the list view area.  
+
 ## User Stories & Inspirations
 
 MVP
