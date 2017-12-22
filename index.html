@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>My Party!</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid" id="site-body">
+
+      <div class="row" id="authbar">
+        <div class="col-sm-4" id="navigation"><img src="https://i.imgur.com/ZDGwJta.png" alt="My Party Logo"></div>
+        <!-- ends the navigation panel -->
+        <div class="col-sm-4" id="message_container">
+          <span id="messages"></span>
+        </div>
+        <!-- ends the messages panel -->
+        <div class="col-sm-4" id="login_panel">
+          <button class="btn btn-primary" id="show_auth_forms" type="button" data-toggle="collapse" data-target="#login_forms" aria-expanded="false" aria-controls="login_forms">
+          Sign In / Sign Up
+          </button>
+          <button class="btn btn-primary" id="change_pw_bttn" type="button" data-toggle="collapse" data-target="#change_pw" aria-expanded="false" aria-controls="change_pw">
+          Change Password
+          </button>
+          <button id="sign-out" type="click" name="submit">Log Out</button>
+          <br><br><br>
+          <div class="collapse" id="login_forms">
+            <div class="card card-body">
+              <form id="sign-in">
+                <fieldset>
+                  <legend>Login</legend>
+                    <input type="text" name="credentials[email]"  placeholder="Enter Username">
+                    <br>
+                    <input id="pw-field" type="password" name="credentials[password]"  placeholder="Password">
+                    <br>
+                    <button type="submit" name="submit" value="Login">Login</button>
+                </fieldset>
+              </form>
+              <br>
+              <form id="sign-up">
+                <fieldset>
+                  <legend>Register</legend>
+                    <input type="text" name="credentials[email]" placeholder="User Name">
+                    <br>
+                    <input type="password" name="credentials[password]" placeholder="Enter a Password">
+                    <br>
+                    <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                    <br>
+                    <button type="submit" name="submit" value="Register New User">Register New User</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <!-- ends the login forms viewable on first landing -->
+          <div class="card card-body" id="change_pw_container">
+            <div class="collapse" id="change_pw">
+              <form id="change-password">
+                <fieldset>
+                  <legend>Change Password</legend>
+                    <input type="password" name="passwords[old]" placeholder="Curent Password">
+                    <br>
+                    <input type="password" name="passwords[new]" placeholder="New Password">
+                    <br>
+                    <button type="submit" >Change Password</button>
+                </fieldset>
+                  <p id="change-pw-message"></p>
+              </form>
+              <button id="cancel" type="submit" name="cancel">Cancel</button>
+              </div>
+          </div>
+          <!-- ends the change pw form hidden until user authenticates -->
+        </div>
+        <!-- ends authentication actions panel -->
+      </div>
+      <!-- ends the authbar -->
+
+      <!-- Begin app_body -->
+      <div class="row" id="app_body" >
+        <div class="col-sm-4" id="side_bar">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="item active">
+                <img class="d-block w-100" src="https://i.imgur.com/KNzJChH.png" alt="First slide">
+              </div>
+              <div class="item">
+                <img class="d-block w-100" src="https://i.imgur.com/ZZXUxW7.png" alt="Second slide">
+              </div>
+              <div class="item">
+                <img class="d-block w-100" src="https://i.imgur.com/SpuUigV.png" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span></a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span></a>
+          </div>
+          <!-- ends the carousel -->
+        </div>
+        <!-- ends the sidebar -->
+        <div class="col-sm-8" id="main-view">
+          <div id="landing_page_panel" onload="randomBeverageOnLoad">
+            <h4>Welcome to My Party!</h4>
+            <div id="site_information">
+              <div class="informational_box">
+                <p>My Party! is a tracking and discovery application to help revelers and
+                party-goers record their favorite drinks.  My Party! allows the user to enter
+                their own favorite beverages, assign a rating, and an occasion.  Users can
+                modify the recipes later if they want to improve upon what they already posted.</p>
+              </div>
+              <div class="informational_box">
+                <p>  My Party! is also a social site where beverages are crowd sourced.  As
+                  beverages are added by users signed up to the site, these beverages become
+                  available for viewing by all other members. The more members who join the
+                  better selection to choose from.  </p>
+              </div>
+            </div>
+            <!-- ends site information -->
+            <div class="landing_page_featurette" id="random_beverage">
+              <h4>Say, you look thirsty.</h4>
+              <p>Why not try one of the random beverages of the day?  Courtesy of the folks at <a href="http://www.thecocktaildb.com/" target="_blank">The Cocktail DB</a> </p>
+              <table class="list_table" style="width:100%">
+                <thead class="list_head">
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th width="25%">Ingredients</th>
+                    <th width="30%">Instructions</th>
+                  </tr>
+                </thead>
+                <tbody id="random_bev_target">
+                </tbody>
+              </table>
+            </div>
+            <!-- ends random_beverage display area -->
+          </div>
+          <!-- ends landing_page_panel -->
+          <div id="welcome_panel">
+            <div class="navbar"><button type="click" class="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" class="go_my_beverages" name="go_my_beverages">View My Beverages</button><button type="click" class="go_all_beverages" name="go_all_beverages">View All Beverages</button></div>
+            <h4>Welcome!</h4>
+            <div id="Welcome_information">
+              <div class="informational_box">
+                <h5>Where to Start?</h4>
+                <p>It's easy really, just navigate to the Add Beverages pane and you can begin entering your favorite beverages.  Can't think of a drink?  Well you can search through <a href="http://www.thecocktaildb.com/" target="_blank">The Cocktail DB</a> for drink ideas to help you on your way.  What?  Why not just go there instead?  </p>
+                <p>My Party! is about letting you keep the best beverage recipes on hand and tweak the recipes as you like. Add an occassion and you can start to put together quite the celebration. </p>
+                <p>Each beverage you enter is shared with the My Party! community.  The more members, the more ideas shared! Rememeber though, only you can modify or delete the recipes you put up.  So My Party! is dynamic with users sharing and updating their favorite beverages all the time!</p>
+              </div>
+              <div class="informational_box">
+                <h5>Need a little more inspiration?</h5>
+                <p>This site is about being entuesed. The internet is full of great ideas and people who share your interests. Enjoy this little gem and why not get into the spirit of things? </p>
+<iframe width="392" height="221" src="https://www.youtube-nocookie.com/embed/LBaDeVEKFFA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <!-- ends welcome_panel -->
+          <div id="all_beverages_panel">
+            <div class="navbar"><button type="click" class="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" class="go_my_beverages" name="go_my_beverages">View My Beverages</button><button type="click" class="go_welcome" name="go_welcome">Back to Welcome Page</button>
+            </div>
+            <h4>Here is what is others are adding to My Party!</h4>
+            <div id="all_beverages">
+              <table class="list_table" style="width:100%">
+                <thead class="list_head">
+                  <tr>
+                    <th>Rating</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Ingredients</th>
+                    <th>Instructions</th>
+                  </tr>
+                </thead>
+                <tbody id="all_beverages_target">
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- ends all_beverages_panel -->
+          <div id="my_beverages_panel">
+            <div class="navbar"><button type="click" class="go_add_beverage" name="go_add_beverage">Add a Beverage</button><button type="click" class="go_all_beverages" name="go_all_beverages">View All Beverages</button><button type="click" class="go_welcome" name="go_welcome">Back to Welcome Page</button></div>
+            <h4>My Beverages Panel</h4>
+            <div id="my_beverages">
+              <table class="list_table" style="width:100%">
+                <thead class="list_head">
+                  <tr>
+                    <th>Rating</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Occasion</th>
+                    <th>View</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="my_beverages_target">
+                </tbody>
+              </table>
+            </div>
+            <div id="show_my_beverage">
+              <table class="list_table" id="show_beverage_target">
+                <thead class="list_head">
+                  <tr>
+                    <th>Rating</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Ingredients</th>
+                    <th>Instructions</th>
+                    <th>Occasion</th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td id="rating_target"></td>
+                  <td id="name_target"></td>
+                  <td id="description_target"></td>
+                  <td id="recipe_target"></td>
+                  <td id="instructions_target"></td>
+                  <td id="occasion_target"></td>
+                </tr>
+              </table>
+              <button class="btn btn-primary" id="mod_bev_button" type="button" data-toggle="collapse" data-target="#mod_a_beverage" aria-expanded="false" aria-controls="mod_a_beverage">Click to Modify Selected Beverage</button>
+              <br><br>
+              <div class="card card-body" id="mod_a_bev_container">
+                <div class="collapse" id="mod_a_beverage">
+                    <form id="modify_beverage_form">
+                      <fieldset>
+                          <input id="mod_id" type="hidden" name="beverage[id]">
+                          <br>
+                          <input id="mod_name" type="text" name="beverage[name]" placeholder="Beverage Name">
+                          <br>
+                          <input id="mod_occasion" type="text" name="beverage[occasion]" placeholder="Occasion">
+                          <br>
+                          <input id="mod_description" size="30" type="text" name="beverage[description]" placeholder="Description">
+                          <br>
+                          <textarea id="mod_recipe" rows="3" cols="50" name="beverage[recipe]" form="modify_beverage_form" placeholder="Enter Ingredients"></textarea>
+                          <br>
+                          <textarea id="mod_instructions" rows="3" cols="50" name="beverage[instructions]" form="modify_beverage_form" placeholder="Enter Instructions"></textarea>
+                          <br>
+                          <input id="mod_rating" type="text" name="beverage[rating]" placeholder="Rating">
+                          <br>
+                          <button type="submit" name="submit" value="Update Beverage">Update Beverage</button>
+                      </fieldset>
+                    </form>
+                  </div>
+              </div>
+            </div>
+            <!-- ends show_my_beverage -->
+          </div>
+          <!-- ends my_beverages_panel -->
+          <div id="add_beverage_panel">
+            <div class="navbar"><button type="click" class="go_all_beverages" name="go_all_beverages">View All Beverages</button><button type="click" class="go_my_beverages" name="go_my_beverages">View My Beverages</button><button type="click" class="go_welcome" name="go_welcome">Back to Welcome Page</button></div>
+            <div id="add_beverage">
+              <form id="add_beverage_form">
+                <fieldset>
+                  <legend>Add a New Beverage</legend>
+                    <input type="text" name="beverage[name]" placeholder="Beverage Name" required>
+                    <br>
+                    <select id="occasion_selector" name="beverage[occasion]" required>
+                      <option value="" disabled="disabled" selected="selected">Select an Occasion</option>
+                      <option value="Anytime">Anytime</option>
+                      <option value="Autumn">Autumn Fun</option>
+                      <option value="Birthday">Birthday</option>
+                      <option value="Chanukah">Chanukah</option>
+                      <option value="Christmas">Christmas</option>
+                      <option value="Classic">Classic Cocktail</option>
+                      <option value="Date Night">Date Night</option>
+                      <option value="Graduation">Graduation</option>
+                      <option value="New Year's Eve">New Year's Eve</option>
+                      <option value="Nonalcoholic Event">Nonalcoholic Event</option>
+                      <option value="Spring Fling">Spring Fling</option>
+                      <option value="Summer Fun">Summer Fun</option>
+                      <option value="Sporting Event">Sporting Event</option>
+                  </select>
+                    <br>
+                    <input type="text" size="30" name="beverage[description]" placeholder="Description" required>
+                    <br>
+                    <textarea rows="3" cols="50" name="beverage[recipe]" form="add_beverage_form" placeholder="Enter Ingredients" required></textarea>
+                    <br>
+                    <textarea rows="3" cols="50" name="beverage[instructions]" form="add_beverage_form" placeholder="Enter Instructions" required></textarea>
+                    <br>
+                    <input type="number" name="beverage[rating]" placeholder="Rating" required>
+                    <br>
+                    <button type="submit" name="submit" value="Add New Beverage">Add New Beverage</button>
+                </fieldset>
+              </form>
+            </div>
+            <!-- ends add_beverage div -->
+            <hr>
+            <div id="lookup_beverage">
+              <div class="landing_page_featurette" id="search_external_beverage">
+                <h4>Need a little inspiration?</h4>
+                <p>You can visit <a href="http://www.thecocktaildb.com/" target="_blank">The Cocktail DB's</a> list of over 550 unique beverages for your occassion. Or get some inspiration more quickly to add to your own list by searching from here.</p>
+                <form id="search_externalDB_form">
+                  <fieldset>
+                    <input type="text" name="search_name" size="25" placeholder="Enter a Beverage Name">
+                    <br>
+                    <button type="submit" name="submit" value="Search for a Beverage">Search The Cocktail DB</button>
+                  </fieldset>
+                </form>
+                <table class="list_table" style="width:100%">
+                  <thead class="list_head">
+                    <tr>
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Category</th>
+                      <th width="25%">Ingredients</th>
+                      <th width="30%">Instructions</th>
+                    </tr>
+                  </tbody>
+                  <tbody id="search_externalDB_target">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- ends lookup_beverage div-->
+          </div>
+          <!-- ends add_beverage_panel -->
+        </div>
+        <!-- ends the main view panel -->
+      </div>
+      <!-- End of app_body -->
+
+      <div class="row" id="footer">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6">My Party! is not affiliated with <a href="http://www.thecocktaildb.com/" target="_blank">The Cocktail DB</a>.  We just share an enthusiasm for sharing something good.</div>
+      </div>
+
+    </body>
+</html>
